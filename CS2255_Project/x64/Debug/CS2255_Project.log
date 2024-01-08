@@ -1,5 +1,6 @@
 ﻿  CS2255_Project.cpp
-D:\CS-2255\CS2255_Project\CS2255_Project\CS2255_Project.cpp(126,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\CS-2255\CS2255_Project\CS2255_Project\CS2255_Project.cpp(181,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\CS-2255\CS2255_Project\CS2255_Project\CS2255_Project.cpp(220,38): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\CS-2255\CS2255_Project\CS2255_Project\CS2255_Project.cpp(77,25): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\CS-2255\CS2255_Project\CS2255_Project\CS2255_Project.cpp(164,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\CS-2255\CS2255_Project\CS2255_Project\CS2255_Project.cpp(219,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\CS-2255\CS2255_Project\CS2255_Project\CS2255_Project.cpp(258,38): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   CS2255_Project.vcxproj -> D:\CS-2255\CS2255_Project\CS2255_Project\x64\Debug\CS2255_Project.exe

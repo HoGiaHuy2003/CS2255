@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <cstdlib>
 #include <ctime>
 
 using namespace std;
@@ -21,6 +22,7 @@ void handleImportFile(vector<int>& arr);
 void handleChooseAlgorithm(vector<int>& arr);
 void handleSaveToFile(vector<int>& arr);
 void handleCompareAlgorithms(vector<int>& arr);
+void handleGenerateFile();
 
 int main() {
     int option;
@@ -28,16 +30,21 @@ int main() {
 
     // Display menu
     cout << "Menu:" << endl;
+    cout << "4. Generate file input_data.txt with a sequence of numbers (minimum 10,000 elements)." << endl;
     cout << "5. Import a .txt file with a sequence of numbers (minimum 10,000 elements)." << endl;
     cout << "6. Choose a sorting algorithm (1 - Selection Sort, 2 - Merge Sort, 3 - Bubble Sort)." << endl;
     cout << "7. Save sorted result to a file and display execution time." << endl;
     cout << "8. Compare execution time of all three algorithms with different input sizes." << endl;
+    cout << "9. Exit" << endl;
 
     while (true) {
         cout << "Enter option: ";
         cin >> option;
 
         switch (option) {
+        case 4:
+            handleGenerateFile();
+            break;
         case 5:
             handleImportFile(arr);
             break;
@@ -50,6 +57,9 @@ int main() {
         case 8:
             handleCompareAlgorithms(arr);
             break;
+        case 9: 
+            cout << "Goodbye" << endl;
+            exit(0);
         default:
             cout << "Invalid option. Try again." << endl;
             break;
@@ -57,6 +67,34 @@ int main() {
     }
 
     return 0;
+}
+
+void handleGenerateFile() {
+    // Number of elements
+    int num_elements = 15000;
+
+    // Set seed to generate random numbers
+    std::srand(std::time(0));
+
+    // Generate random number sequence
+    std::vector<int> random_numbers;
+    for (int i = 0; i < num_elements; ++i) {
+        random_numbers.push_back(std::rand() % 1000000 + 1);
+    }
+
+    // Save to .txt file
+    std::ofstream file("input_data.txt");
+    if (file.is_open()) {
+        for (int number : random_numbers) {
+            file << number << " ";
+        }
+        file.close();
+        cout << "The input_data.txt file has been created successfully." << endl;
+    }
+    else {
+        cerr << "Cannot open file for recording." << endl;
+        exit(0);
+    }
 }
 
 void handleImportFile(vector<int>& arr) {
