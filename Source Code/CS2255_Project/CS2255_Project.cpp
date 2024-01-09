@@ -13,7 +13,7 @@ class Algorithm {
 private:
 	vector<int> arr;
 	int sizeOfArr;
-	double duration;
+	double duration; // Execution time
 public:
 	Algorithm() {
 
